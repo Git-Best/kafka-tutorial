@@ -1,9 +1,9 @@
-package org.example.apartionkey.adaptor.out.message;
+package org.example.bpriority.adaptor.out.message;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.example.apartionkey.adaptor.in.web.dto.MessageData;
-import org.example.apartionkey.application.port.out.KafkaPort;
+import org.example.bpriority.adaptor.in.web.dto.MessageData;
+import org.example.bpriority.application.port.out.KafkaPort;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Component;
@@ -21,7 +21,7 @@ public class Producer implements KafkaPort {
         CompletableFuture<SendResult<String, Object>> future = kafkaTemplate.send(topic, key, message);
         future.whenComplete((result, ex) -> {
             if (ex == null) {
-                log.info("Sent message with key: {}, offset: {}, partition: {}", key, result.getRecordMetadata().offset(), result.getRecordMetadata().partition());
+                log.info("Sent message with priority: {}, offset: {}, partition: {}", key, result.getRecordMetadata().offset(), result.getRecordMetadata().partition());
             } else {
                 log.error("Failed to send message: " + ex.getMessage());
             }
