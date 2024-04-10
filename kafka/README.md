@@ -24,7 +24,7 @@
 
 # Docker Compose 실행
 ```bash
-$ docker-compose -f docker-compose-single.yml up -d
+$ docker-compose up -d
 
 [+] Running 3/3
  ⠿ Network handson_01_default        Created                                             0.0s
