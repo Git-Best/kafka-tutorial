@@ -1,2 +1,3 @@
 rootProject.name = 'kafka'
 include 'kafka-step1'
+include 'kafka-manual-consume'
