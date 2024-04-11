@@ -1,0 +1,6 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:29092
+    topic-default-priority: default-error-topic
+    topic-error-handle: error-handle-topic
+    topic-retry-handle: retry-handle-topic
